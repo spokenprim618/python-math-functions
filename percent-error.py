@@ -1,4 +1,8 @@
-def percent-errror(actual, experimental):
-  ans = (actual/abs((experimental-actual)))*100
-  return ans
-print(percent-errror(11.6,11.9))
+def percentError(actual, experimental):
+    first= experimental - actual
+    second= abs(first)
+    third= second/ actual
+    fourth= third *100
+    fifth = round(fourth,1)
+    return fifth
+print(percentError(10.9,11.6))
