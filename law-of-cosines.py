@@ -2,16 +2,22 @@ import math
 import numpy as np
 # for some reason b is c and c is b
 def sides(a=0,b=0,c=0, 
-          A=0,B=0,C=0):
-   
-    sideA = (b**2+c**2)+((-2*b*c)*
-    (np.cos((A * np.pi)/180)));
-    
-    sideB = (a**2+c**2)+((-2*a*c)*
-    (np.cos((B * np.pi)/180)));
-    
-    sideC = (b**2+a**2)+((-2*b*a)*
-    (np.cos((C * np.pi)/180)));
+          A=0,B=0,C =0):
+    sideB = 0;
+    sideC = 0;
+    sideA = 0;
+    if((b and c and A) != 0):
+        sideA = (b**2+c**2)+((-2*b*c)*
+        (np.cos((A * np.pi)/180)));
+        
+    if((a and c and B) != 0):
+        sideB = (a**2+c**2)+((-2*a*c)*
+        (np.cos((B * np.pi)/180)));
+        
+        
+    if((b and a and C) !=0):
+        sideC = (b**2+a**2)+( (-2*b*a)*
+        (np.cos((C * np.pi)/180)));
     
     return [
     round(math.sqrt(sideA),1),
@@ -19,13 +25,13 @@ def sides(a=0,b=0,c=0,
     round(math.sqrt(sideC),1),
     ]
 
-print(sides(A=36,B=0,C=0, 
-            a=0,b=5,c=7));
+print(sides(A=0,B=0,C=97, 
+            a=5,b=3,c=0));
 
 def angle(
-    a1=sides(A=36,b=7,c=5)[0],
-    b1=sides(A=36,b=7,c=5)[1],
-    c1=sides(A=36,b=7,c=5)[2]
+    a1=sides(C=97,b=3,a=5)[0],
+    b1=sides(C=97,b=3,a=5)[1],
+    c1=sides(C=97,b=3,a=5)[2]
     ):
         
     part1A = b1**2 + c1**2;
@@ -53,4 +59,4 @@ def angle(
     round(math.degrees(angleB),0),
     round(math.degrees(angleC),0)
     ]
-print(angle())
+print(angle(b1 = 3,a1=5))
