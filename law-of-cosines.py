@@ -1,39 +1,55 @@
+from pyscript import document
 import math
-import numpy as np
 # for some reason b is c and c is b
-def sides(a=0,b=0,c=0, 
-          A=0,B=0,C =0):
+def sides(event):
+    input1 = document.querySelector("#side1")
+    input2 = document.querySelector("#side2")
+    input3 = document.querySelector("#side3")
+    input4 = document.querySelector("#angle1")
+    input5 = document.querySelector("#angle2")
+    input6 = document.querySelector("#angle3")
+  
+    a = float(input1.value)
+    b = float(input2.value)
+    c = float(input3.value)
+    A = float(input4.value)
+    B = float(input5.value)
+    C = float(input6.value)
+
     sideB = 0;
     sideC = 0;
     sideA = 0;
+    
     if((b and c and A) != 0):
-        sideA = (b**2+c**2)+((-2*b*c)*
-        (np.cos((A * np.pi)/180)));
+       sideA = round(math.sqrt( (b**2+c**2)+((-2*b*c)*
+        (math.cos((A * math.pi)/180)))),1);
         
     if((a and c and B) != 0):
-        sideB = (a**2+c**2)+((-2*a*c)*
-        (np.cos((B * np.pi)/180)));
+        sideB =round(math.sqrt((a**2+c**2)+((-2*a*c)*
+        (math.cos((B * math.pi)/180)))),1) ;
         
         
     if((b and a and C) !=0):
-        sideC = (b**2+a**2)+( (-2*b*a)*
-        (np.cos((C * np.pi)/180)));
-    
-    return [
-    round(math.sqrt(sideA),1),
-    round(math.sqrt(sideB),1),
-    round(math.sqrt(sideC),1),
-    ]
-
-print(sides(A=0,B=0,C=97, 
-            a=5,b=3,c=0));
-
-def angle(
-    a1=sides(C=97,b=3,a=5)[0],
-    b1=sides(C=97,b=3,a=5)[1],
-    c1=sides(C=97,b=3,a=5)[2]
-    ):
+        sideC = round(math.sqrt((b**2+a**2)+( (-2*b*a)*
+        (math.cos((C * math.pi)/180)))),1);
         
+    output_div = document.querySelector("#output-sides")
+    output_div.innerText = "The side a is {}, side b is {}, and side c is {}".format(sideA,sideB,sideC)
+    return [sideA,sideB,sideC]
+
+def angle(event):
+    
+    input1 = document.querySelector("#a1")
+    input2 = document.querySelector("#b1")
+    input3 = document.querySelector("#c1")
+    input1 = float(input1.value)
+    input2 = float(input2.value)
+    input3 = float(input3.value)
+    a1= input1
+    b1= input2
+    c1= input3
+    
+    
     part1A = b1**2 + c1**2;
     part1B = a1**2 + c1**2;
     part1C = b1**2 + a1**2;
@@ -50,13 +66,9 @@ def angle(
     part4B = part3B / part2B;
     part4C = part3C / part2C;
     
-    angleA = math.acos(part4A);
-    angleB = math.acos(part4B);
-    angleC = math.acos(part4C);
-    
-    return [
-    round(math.degrees(angleA),0),
-    round(math.degrees(angleB),0),
-    round(math.degrees(angleC),0)
-    ]
-print(angle(b1 = 3,a1=5))
+    angleA = round(math.degrees(math.acos(part4A)),0);
+    angleB = round(math.degrees(math.acos(part4B)),0);
+    angleC = round(math.degrees(math.acos(part4C)),0);
+    output_div = document.querySelector("#output-angle")
+    output_div.innerText = "The angle for side a is {}, the angle for side b is {}, and the angle for side c is {}".format(angleA,angleB,angleC)
+   

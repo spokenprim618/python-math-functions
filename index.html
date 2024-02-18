@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+ 
+    
+    <div class = "percent-error">
+        <h1>Percent Error calculator</h1>
+        <input type="number" id="percent1" placeholder="Write actual">
+        <input type="number" id="percent2" placeholder="Write experimental">
+
+        <button py-click ="percentError">Click me</button>
+        <div id ="output-percent"></div>
+        <script type="py" src="./percent-error.py"></script>
+    </div>
+    <div class = "arithmetic">
+        <h1>arithmetic calculator</h1>
+        <input type="number" id="arithmetic1" placeholder="Write n1">
+        <input type="number" id="arithmetic2" placeholder="Write n2">
+        <input type="number" id="arithmetic3" placeholder="Write nth term">
+
+        <button py-click ="arit">Click me</button>
+        <div id ="output-arit"></div>
+        <script type="py" src="./arithmetic.py"></script>
+    </div>
+    <div class = "geometric">
+        <h1>Geometric calculator</h1>
+        <input type="number" id="geo1" placeholder="Write n1">
+        <input type="number" id="geo2" placeholder="Write n2">
+        <input type="number" id="geo3" placeholder="Write nth term">
+
+        <button py-click ="geo">Click me</button>
+        <div id ="output-geo"></div>
+        <script type="py" src="./geo.py"></script>
+    </div>
+    <div class = "law-0f-cosines">
+        <h1>law of cosines calulator</h1>
+        <h2>finding 3 sides</h2>
+        <input type="number" id="side1" placeholder="Write side1">
+        <input type="number" id= "side2" placeholder="Write side2">
+        <input type="number" id= "side3" placeholder="Write side3">
+        <input type="number" id= "angle1" placeholder="Write angle1">
+        <input type="number" id= "angle2" placeholder="Write angle2">
+        <input type="number" id= "angle3" placeholder="Write angle3">
+
+        <button py-click ="sides">Click me</button>
+        <div id ="output-sides"></div>
+        <script type="py" src="./law-of-cosines.py"></script>
+        
+        <h2>find 3 angles</h2>
+        <input type="number" id="a1" placeholder="Write a1">
+        <input type="number" id="b1" placeholder="Write b1">
+        <input type="number" id="c1" placeholder="Write c1">
+
+
+        <button py-click ="angle">Click me</button>
+        <div id ="output-angle"></div>
+        <script type="py" src="./law-of-cosines.py"></script>
+    </div>
+    <div class = "percent-error">
+        <h1>Quadratic equation calculator</h1>
+        <h2>What is the orientation</h2>
+        <input type="number" id="orientation" placeholder="Write orientation">
+        <input type="number" id="2ndTermMinMax" placeholder="Write 2nd term" style="display: none;">
+        <input type="number" id="1stTermMinMax" placeholder="Write 1st term"style="display: none;">
+        <input type="number" id="1stTermEquation" placeholder="Write 1st term"style="display: none;">
+        <input type="number" id="2ndTermEquation" placeholder="Write 2nd term"style="display: none;">
+        <input type="number" id="3stTermEquation" placeholder="Write 3rd term"style="display: none;">
+        <input type="number" id="xEquation" placeholder="Write the X"style="display: none;">
+        <input type="number" id="1stTermXNeg" placeholder="Write 1st term"style="display: none;">
+        <input type="number" id="2ndTermXNeg" placeholder="Write 2nd term"style="display: none;">
+        <input type="number" id="3rdTermXNeg" placeholder="Write 3nd term"style="display: none;">
+        <input type="number" id="1stTermXPos" placeholder="Write 1st term"style="display: none;">
+        <input type="number" id="2ndTermXPos" placeholder="Write 2nd term"style="display: none;">
+        <input type="number" id="3rdTermXPos" placeholder="Write 3rd term"style="display: none;">
+
+        <button py-click ="orientation">Click me</button>
+        <button py-click ="minMax" style="display: none;">Click me</button>
+        <button py-click ="equation" style="display: none">Click me</button>
+        <button py-click ="x_intNeg" style="display: none;">Click me</button>
+        <button py-click ="x_intPos" style="display: none;">Click me</button>
+
+        <div id ="output-orientation"></div>
+        <div id ="output-minMax" style="display: none;"></div>
+        <div id ="output-equation" style="display: none;"></div>
+        <div id ="output-x_intNeg" style="display: none;"></div>
+        <div id ="output-x_intPos" style="display: none;"></div>
+
+        <script type="py" src="./percent-error.py"></script>
+    </div>
+
+</body>
+</html>
