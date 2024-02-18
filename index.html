@@ -40,7 +40,7 @@
         <div id ="output-geo"></div>
         <script type="py" src="./geo.py"></script>
     </div>
-    <div class = "law-0f-cosines">
+    <div class = "law-of-cosines">
         <h1>law of cosines calulator</h1>
         <h2>finding 3 sides</h2>
         <input type="number" id="side1" placeholder="Write side1">
@@ -64,36 +64,33 @@
         <div id ="output-angle"></div>
         <script type="py" src="./law-of-cosines.py"></script>
     </div>
-    <div class = "percent-error">
+    <div class = "quadratic">
         <h1>Quadratic equation calculator</h1>
         <h2>What is the orientation</h2>
         <input type="number" id="orientation" placeholder="Write orientation">
-        <input type="number" id="2ndTermMinMax" placeholder="Write 2nd term" style="display: none;">
-        <input type="number" id="1stTermMinMax" placeholder="Write 1st term"style="display: none;">
-        <input type="number" id="1stTermEquation" placeholder="Write 1st term"style="display: none;">
-        <input type="number" id="2ndTermEquation" placeholder="Write 2nd term"style="display: none;">
-        <input type="number" id="3stTermEquation" placeholder="Write 3rd term"style="display: none;">
+        <input type="number" id="TermMinMax2nd" placeholder="Write 2nd term" style="display: none;">
+        <input type="number" id="TermMinMax1st" placeholder="Write 1st term"style="display: none;">
+        <input type="number" id="TermEquation1st" placeholder="Write 1st term"style="display: none;">
+        <input type="number" id="TermEquation2nd" placeholder="Write 2nd term"style="display: none;">
+        <input type="number" id="TermEquation3st" placeholder="Write 3rd term"style="display: none;">
         <input type="number" id="xEquation" placeholder="Write the X"style="display: none;">
-        <input type="number" id="1stTermXNeg" placeholder="Write 1st term"style="display: none;">
-        <input type="number" id="2ndTermXNeg" placeholder="Write 2nd term"style="display: none;">
-        <input type="number" id="3rdTermXNeg" placeholder="Write 3nd term"style="display: none;">
-        <input type="number" id="1stTermXPos" placeholder="Write 1st term"style="display: none;">
-        <input type="number" id="2ndTermXPos" placeholder="Write 2nd term"style="display: none;">
-        <input type="number" id="3rdTermXPos" placeholder="Write 3rd term"style="display: none;">
+        <input type="number" id="TermXNeg1st" placeholder="Write 1st term"style="display: none;">
+        <input type="number" id="TermXNeg2nd" placeholder="Write 2nd term"style="display: none;">
+        <input type="number" id="TermXNeg3rd" placeholder="Write 3nd term"style="display: none;">
+        <input type="number" id="TermXPos1st" placeholder="Write 1st term"style="display: none;">
+        <input type="number" id="TermXPos2nd" placeholder="Write 2nd term"style="display: none;">
+        <input type="number" id="TermXPos3rd" placeholder="Write 3rd term"style="display: none;">
 
-        <button py-click ="orientation">Click me</button>
-        <button py-click ="minMax" style="display: none;">Click me</button>
-        <button py-click ="equation" style="display: none">Click me</button>
-        <button py-click ="x_intNeg" style="display: none;">Click me</button>
-        <button py-click ="x_intPos" style="display: none;">Click me</button>
+        <button py-click ="Quad.orientation" id = "orientation-butt">Click me</button>
+        <button py-click ="Quad.minMax" id = "minMax-butt" style="display: none;">Click me</button>
+        <button py-click ="Quad.equation" id = "equation-butt" style="display: none">Click me</button>
+        <button py-click ="Quad.x_intNeg" id = "x_intNeg-butt" style="display: none;">Click me</button>
+        <button py-click ="Quad.x_intPos" id = "x_intPos-butt" style="display: none;">Click me</button>
+        <button py-click ="Quad" id = "quad-butt" style="display: none;">Click me</button>
 
-        <div id ="output-orientation"></div>
-        <div id ="output-minMax" style="display: none;"></div>
-        <div id ="output-equation" style="display: none;"></div>
-        <div id ="output-x_intNeg" style="display: none;"></div>
-        <div id ="output-x_intPos" style="display: none;"></div>
+        <div id ="output-quad"></div>
 
-        <script type="py" src="./percent-error.py"></script>
+        <script type="py" src="./quadratic.py"></script>
     </div>
 
 </body>
