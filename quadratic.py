@@ -22,6 +22,8 @@ class Quad():
         document.getElementById("TermMinMax2nd").style.display = "block";
         document.getElementById("TermMinMax1st").style.display = "block";
         document.getElementById("minMax-butt").style.display = "block";
+        text_h2 = document.querySelector("#change")
+        text_h2.innerText = "What is the vertex."
         
     def minMax(event):
         
@@ -45,6 +47,9 @@ class Quad():
         document.getElementById("TermEquation3st").style.display = "block";
         document.getElementById("xEquation").style.display = "block";
         document.getElementById("equation-butt").style.display = "block";
+        
+        text_h2 = document.querySelector("#change")
+        text_h2.innerText = "What is the output of the equation."
     
     def equation(event):
         
@@ -71,6 +76,8 @@ class Quad():
         document.getElementById("TermXNeg2nd").style.display = "block";
         document.getElementById("TermXNeg3rd").style.display = "block";
         document.getElementById("x_intNeg-butt").style.display = "block";
+        text_h2 = document.querySelector("#change")
+        text_h2.innerText = "What is the quadratic equation with a negative."
         
     def x_intNeg(event):
         a4 = document.querySelector("#TermXNeg1st")
@@ -111,6 +118,8 @@ class Quad():
         document.getElementById("TermXPos2nd").style.display = "block";
         document.getElementById("TermXPos3rd").style.display = "block";
         document.getElementById("x_intPos-butt").style.display = "block";
+        text_h2 = document.querySelector("#change")
+        text_h2.innerText = "What is the quadratic equation with a positive."
 
     def x_intPos(event):
         a5 = document.querySelector("#TermXPos1st")
@@ -140,5 +149,5 @@ class Quad():
         else:
             output_div = document.querySelector("#output-quad")
             output_div.innerText = "This is the squared portion {} and this is the rest {}".format(squared,rest)
-    
+         
    
