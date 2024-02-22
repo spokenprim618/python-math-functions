@@ -149,5 +149,4 @@ class Quad():
         else:
             output_div = document.querySelector("#output-quad")
             output_div.innerText = "This is the squared portion {} and this is the rest {}".format(squared,rest)
-         
-   
+            
