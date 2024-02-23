@@ -4,29 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
-    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js" defer></script>
     <title>Calculators</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="script.js"></script>
+    <script src="./script.js" defer></script>
 
 </head>
 <body>
     <div class = "nav">
         
-        <ul>
-            <li><a href="#" class = "link">William Vasquez</a></li>
-        </ul>
-        <ul>
-            <li><a href="" class = "link"></a>About</a></li>
-            <div class="dropdown">
-                <li><a href="#" class = "link"></a>Functions</a></li>
-                <div class="dropdown-menu">
-                    dropdown content
+        <div class="section1">
+            <a href ="#"class = "link">William Vasquez</a>
+        </div>
+        
+        <div class="section2">
+            <a href ="#" class = "link">About</a>
+             
+        <div class="dropdown" data-dropdown>
+            <a href ="#" class = "link" data-dropdown-button>Functions</a>
+
+            <div class="dropdown-menu">
+                <div class="function-links">
+                    <a href="./arit/arithmetic.html">Aritmetic</a>
+                    <a href="./LOC/law-of-cosinses.html">Law Of Cosines</a>
+                    <a href="./PE/percent-error.html">Percent Error</a>
+                    <a href="./Quad/quadratic.html">Quadratic</a>
                 </div>
             </div>
-            
-            <li><a href="#" class = "link"></a>Contact</a></li>
-        </ul>
+        </div>
+
+        <a href ="#"class = "link">Contact</a>
+    </div>
+        
         
     </div>
     <div class = "main">
