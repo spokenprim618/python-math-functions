@@ -3,67 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculators</title>
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js" defer></script>
-    <title>Calculators</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
-
 </head>
+
 <body>
-    <div class = "nav">
-        
-        <div class="section1 glow-text">
-            <a href ="#"class = "link">William Vasquez</a>
-        </div>
-        
-        <div class="section2 glow-text">
-            <a href ="#" class = "link">About</a>
-             
-        <div class="dropdown" data-dropdown>
-            <a href ="#" class = "link" data-dropdown-button>Functions</a>
+    <nav class="nav">
+            <a href="#" class="link">William Vasquez</a>
+            <a href="#" class="link">About</a>
+            <a href="#" class="link">Contact</a>
+    </nav>
 
-            <div class="dropdown-menu information-grid">
-                    <a href="./arit/arithmetic.html">Arit&Geo</a>
-                    <a href="./LOC/law-of-cosinses.html">Law Of Cosines</a>
-                    <a href="./PE/percent-error.html">Percent Error</a>
-                    <a href="./Quad/quadratic.html">Quadratic</a>
-            </div>
-        </div>
-
-        <a href ="#"class = "link">Contact</a>
-    </div>
-        
-        
-    </div>
-    <div class = "main">
-        <div class = "landing">
+    <main class="main">
+        <section class="landing">
             <h1>Calculator</h1>
-        </div>
-        <div class = "stigma">
-            <h1>Stigma</h1>
-        </div>
-        <div class = "benefit">
-            <h1>Benefit</h1>
-        </div>
-        <div class = "functions-boxes">
-            
-            <div class = "arit-box ">
-                <h1>  </h1>
-            </div>
-            <div class = "geo-box ">
+        </section>
 
+        <section class="functions">
+            <div class="function">
+                <div class="function-title" data-collapsible>
+                    <h2>Arit & Geo <span class="arrow">▼</span></h2>
+                </div>
+                <div class="function-content" style="display: none;">
+                    <p>This calculator helps you with arithmetic and geometric calculations.</p>
+                    <a href="./arit/arithmetic.html" class="link">Go to Arit & Geo Calculator</a>
+                </div>
             </div>
-            <div class = "LOC-box ">
 
+            <div class="function">
+                <div class="function-title" data-collapsible>
+                    <h2>Law of Cosines <span class="arrow">▼</span></h2>
+                </div>
+                <div class="function-content" style="display: none;">
+                    <p>Calculate angles and sides using the Law of Cosines.</p>
+                    <a href="./LOC/law-of-cosinses.html" class="link">Go to Law of Cosines Calculator</a>
+                </div>
             </div>
-            <div class = "PE-box ">
 
+            <div class="function">
+                <div class="function-title" data-collapsible>
+                    <h2>Percent Error <span class="arrow">▼</span></h2>
+                </div>
+                <div class="function-content" style="display: none;">
+                    <p>Find the percent error between two values for accuracy.</p>
+                    <a href="./PE/percent-error.html" class="link">Go to Percent Error Calculator</a>
+                </div>
             </div>
-            <div class = "Quad-box ">
 
+            <div class="function">
+                <div class="function-title" data-collapsible>
+                    <h2>Quadratic Equation <span class="arrow">▼</span></h2>
+                </div>
+                <div class="function-content" style="display: none;">
+                    <p>Solve quadratic equations with this calculator.</p>
+                    <a href="./Quad/quadratic.html" class="link">Go to Quadratic Calculator</a>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 </html>
