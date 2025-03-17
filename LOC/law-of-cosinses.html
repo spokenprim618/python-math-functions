@@ -1,49 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
-    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pyscript.net/releases/2024.1.1/core.css"
+    />
+    <script
+      type="module"
+      src="https://pyscript.net/releases/2024.1.1/core.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
 
     <title>Document</title>
-</head>
-<body>
-    <div class = "law-of-cosines">
-        <h1>Law of Cosines Calulator</h1>
+  </head>
+  <body>
+    <div class="law-of-cosines">
+      <h1>Law of Cosines Calulator</h1>
 
-        <h2>Finding 3 sides of the triangle</h2>
-        <div class = "LOC_sides_inputs">
-            <input type="number" id="side1" placeholder="Write first side a">
-            <input type="number" id= "side2" placeholder="Write second side b">
-            <input type="number" id= "side3" placeholder="Write third side c">
-            <input type="number" id= "angle1" placeholder="Write the first angle A">
-            <input type="number" id= "angle2" placeholder="Write the second angle B">
-            <input type="number" id= "angle3" placeholder="Write the third angle C">
-        </div>
-        <h5>If there is no value write 0</h5>
+      <h2>Finding 3 sides of the triangle</h2>
+      <div class="LOC_sides_inputs">
+        <input type="number" id="side1" placeholder="Write first side a" />
+        <input type="number" id="side2" placeholder="Write second side b" />
+        <input type="number" id="side3" placeholder="Write third side c" />
+        <input
+          type="number"
+          id="angle1"
+          placeholder="Write the first angle A"
+        />
+        <input
+          type="number"
+          id="angle2"
+          placeholder="Write the second angle B"
+        />
+        <input
+          type="number"
+          id="angle3"
+          placeholder="Write the third angle C"
+        />
+      </div>
+      <h5>If there is no value write 0</h5>
 
-        <button py-click ="sides">Click me</button>
+      <button py-click="sides">Click me</button>
 
-        <div id ="output-sides"></div>
+      <div id="output-sides"></div>
 
-        <script type="py" src="./law-of-cosines.py"></script>
-        
-        <h2>Finding 3 angles of the triangle</h2>
-        <div class = "LOC_angles_inputs">
-            <input type="number" id="a1" placeholder="Write the first side a">
-            <input type="number" id="b1" placeholder="Write the second side b">
-            <input type="number" id="c1" placeholder="Write the third side c">
-        </div>
-        <h5>If there is no value write 0</h5>
+      <script type="py" src="./law-of-cosines.py"></script>
 
-        <button py-click ="angle">Click me</button>
+      <h2>Finding 3 angles of the triangle</h2>
+      <div class="LOC_angles_inputs">
+        <input type="number" id="a1" placeholder="Write the first side a" />
+        <input type="number" id="b1" placeholder="Write the second side b" />
+        <input type="number" id="c1" placeholder="Write the third side c" />
+      </div>
+      <h5>If there is no value write 0</h5>
 
-        <div id ="output-angle"></div>
+      <button py-click="angle">Click me</button>
 
-        <script type="py" src="./law-of-cosines.py"></script>
+      <div id="output-angle"></div>
 
+      <script type="py" src="./law-of-cosines.py"></script>
     </div>
-</body>
+  </body>
 </html>
