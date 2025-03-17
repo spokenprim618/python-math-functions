@@ -1,5 +1,4 @@
 from pyscript import document
-
 def geo(event):
   input1 = document.querySelector("#geo1")
   input2 = document.querySelector("#geo2")
