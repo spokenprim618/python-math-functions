@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Law of Cosines Calculator</title>
+</head>
+<body>
+    <div class="law-of-cosines">
+        <h1>Law of Cosines Calculator</h1>
+
+        <form method="POST">
+            <h2>Finding 3 sides of the triangle</h2>
+            <div class="LOC_sides_inputs">
+                <input type="number" step="any" name="side1" placeholder="First side (a)" value="0">
+                <input type="number" step="any" name="side2" placeholder="Second side (b)" value="0">
+                <input type="number" step="any" name="side3" placeholder="Third side (c)" value="0">
+                <input type="number" step="any" name="angle1" placeholder="Angle opposite side a (A)" value="0">
+                <input type="number" step="any" name="angle2" placeholder="Angle opposite side b (B)" value="0">
+                <input type="number" step="any" name="angle3" placeholder="Angle opposite side c (C)" value="0">
+            </div>
+            <h5>Enter 0 for unknown values</h5>
+            <button type="submit" name="side_submit">Calculate Sides</button>
+
+            {% if sides_result %}
+            <div class="result">
+                <h3>Calculated Sides:</h3>
+                <p>Side a: {{ sides_result[0] if sides_result[0] != 0 else 'Not calculable' }}</p>
+                <p>Side b: {{ sides_result[1] if sides_result[1] != 0 else 'Not calculable' }}</p>
+                <p>Side c: {{ sides_result[2] if sides_result[2] != 0 else 'Not calculable' }}</p>
+            </div>
+            {% endif %}
+        </form>
+
+        <form method="POST">
+            <h2>Finding 3 angles of the triangle</h2>
+            <div class="LOC_angles_inputs">
+                <input type="number" step="any" name="a1" placeholder="First side (a)" value="0">
+                <input type="number" step="any" name="b1" placeholder="Second side (b)" value="0">
+                <input type="number" step="any" name="c1" placeholder="Third side (c)" value="0">
+            </div>
+            <h5>Enter all three sides to calculate angles</h5>
+            <button type="submit" name="angle_submit">Calculate Angles</button>
+
+            {% if angles_result %}
+            <div class="result">
+                <h3>Calculated Angles:</h3>
+                <p>Angle A: {{ angles_result[0] }}°</p>
+                <p>Angle B: {{ angles_result[1] }}°</p>
+                <p>Angle C: {{ angles_result[2] }}°</p>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>

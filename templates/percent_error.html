@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Percent Error Calculator</title>
+</head>
+<body>
+    <div class="percent-error">
+        <h1>Percent Error Calculator</h1>
+
+        <form method="POST">
+            <div class="percentError_inputs">
+                <label for="experimental">Experimental Value:</label>
+                <input type="number" step="any" id="experimental" name="experimental" required>
+                
+                <label for="actual">Actual Value:</label>
+                <input type="number" step="any" id="actual" name="actual" required>
+            </div>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result %}
+            <div class="result" id="output-percent">
+                {% if result is string %}
+                    <p class="error">{{ result }}</p>
+                {% else %}
+                    <p>The percent error is {{ result }}%</p>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if history %}
+        <div class="history">
+            <h3>Calculation History</h3>
+            <ul>
+                {% for entry in history %}
+                <li>
+                    Experimental: {{ entry.experimental }}, 
+                    Actual: {{ entry.actual }} → 
+                    Result: {{ entry.result }}%
+                    <form method="POST" action="{{ url_for('delete_result', calc_type='percent-error', index=loop.index0) }}" style="display:inline;">
+                        <button type="submit" class="delete-btn">Delete</button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

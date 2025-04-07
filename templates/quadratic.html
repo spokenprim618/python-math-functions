@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Quadratic Equation Calculator</title>
+    <style>
+        .calculator-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="quadratic">
+        <h1>Quadratic Equation Calculator</h1>
+
+        <!-- Orientation Calculator -->
+        <div class="calculator-section">
+            <h2>Determine Parabola Orientation</h2>
+            <form method="POST">
+                <div class="input-group">
+                    <label for="a-orient">Coefficient a:</label>
+                    <input type="number" step="any" id="a-orient" name="a" required>
+                </div>
+                <button type="submit" name="orientation">Determine Orientation</button>
+            </form>
+        </div>
+
+        <!-- Vertex Calculator -->
+        <div class="calculator-section">
+            <h2>Find Vertex</h2>
+            <form method="POST">
+                <div class="input-group">
+                    <label for="a-vertex">Coefficient a:</label>
+                    <input type="number" step="any" id="a-vertex" name="a" required>
+                </div>
+                <div class="input-group">
+                    <label for="b-vertex">Coefficient b:</label>
+                    <input type="number" step="any" id="b-vertex" name="b" required>
+                </div>
+                <button type="submit" name="vertex">Find Vertex</button>
+            </form>
+        </div>
+
+        <!-- Equation Evaluator -->
+        <div class="calculator-section">
+            <h2>Evaluate Equation</h2>
+            <form method="POST">
+                <div class="input-group">
+                    <label for="a-eval">Coefficient a:</label>
+                    <input type="number" step="any" id="a-eval" name="a" required>
+                </div>
+                <div class="input-group">
+                    <label for="b-eval">Coefficient b:</label>
+                    <input type="number" step="any" id="b-eval" name="b" required>
+                </div>
+                <div class="input-group">
+                    <label for="c-eval">Coefficient c:</label>
+                    <input type="number" step="any" id="c-eval" name="c" required>
+                </div>
+                <div class="input-group">
+                    <label for="x-eval">x value:</label>
+                    <input type="number" step="any" id="x-eval" name="x" required>
+                </div>
+                <button type="submit" name="evaluate">Evaluate</button>
+            </form>
+        </div>
+
+        <!-- Quadratic Solver -->
+        <div class="calculator-section">
+            <h2>Solve Quadratic Equation</h2>
+            <form method="POST">
+                <div class="input-group">
+                    <label for="a-solve">Coefficient a:</label>
+                    <input type="number" step="any" id="a-solve" name="a" required>
+                </div>
+                <div class="input-group">
+                    <label for="b-solve">Coefficient b:</label>
+                    <input type="number" step="any" id="b-solve" name="b" required>
+                </div>
+                <div class="input-group">
+                    <label for="c-solve">Coefficient c:</label>
+                    <input type="number" step="any" id="c-solve" name="c" required>
+                </div>
+                <button type="submit" name="solve">Solve</button>
+            </form>
+        </div>
+
+        <!-- Results Display -->
+        <!-- In your quadratic.html template -->
+{% if result %}
+<div class="result-section">
+    <h2>Result</h2>
+    {% if result[0] is string or result[1] is string %}
+        <p>{{ result[0] }}</p>
+        {% if result[1] is not none %}
+            <p>{{ result[1] }}</p>
+        {% endif %}
+    {% else %}
+        {% if result[1] is none %}
+            <p>Result: {{ result[0] }}</p>
+        {% else %}
+            <p>Root 1: {{ result[0] }}</p>
+            <p>Root 2: {{ result[1] }}</p>
+        {% endif %}
+    {% endif %}
+</div>
+{% endif %}
+
+        <!-- History Section -->
+        {% if history %}
+        <div class="history-section">
+            <h2>Calculation History</h2>
+            <ul>
+                {% for entry in history %}
+                <li>
+                    {{ entry.type|title }}: 
+                    {% for key, value in entry.inputs.items() %}
+                        {{ key }}={{ value }} 
+                    {% endfor %}
+                    → 
+                    {% if entry.result[1] is none %}
+                        {{ entry.result[0] }}
+                    {% else %}
+                        {{ entry.result[0] }}, {{ entry.result[1] }}
+                    {% endif %}
+                    <form method="POST" action="{{ url_for('delete_result', calc_type='quadratic', index=loop.index0) }}" style="display:inline;">
+                        <button type="submit" class="delete-btn">Delete</button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

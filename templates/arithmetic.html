@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Math Calculators</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Arithmetic & Geometric Calculator</h1>
+
+    <form method="POST">
+      <label><input type="radio" name="type" value="arithmetic" {% if calc_type == 'arithmetic' %}checked{% endif %}> Arithmetic</label>
+      <label><input type="radio" name="type" value="geometric" {% if calc_type == 'geometric' %}checked{% endif %}> Geometric</label>
+
+      <input type="number" name="n1" placeholder="n1" required>
+      <input type="number" name="n2" placeholder="n2" required>
+      <input type="number" name="nth" placeholder="nth term" required>
+
+      <button type="submit">Calculate</button>
+    </form>
+
+    {% if result is not none %}
+      <p><strong>Result:</strong> {{ result }}</p>
+    {% endif %}
+
+    <h3>Previous Results ({{ calc_type }}):</h3>
+    <ul>
+      {% for r in results %}
+        <li>
+          {{ loop.index }}. {{ r }}
+          <form method="POST" action="/delete/{{ calc_type }}/{{ loop.index }}" style="display:inline;">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>

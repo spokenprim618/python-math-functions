@@ -6,8 +6,8 @@
     <title>Calculators</title>
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js" defer></script>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./static/style.css">
+    <script src="./static/script.js" defer></script>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="function-content" style="display: none;">
                     <p>This calculator helps you with arithmetic and geometric calculations.</p>
-                    <a href="./arit/arithmetic.html" class="link">Go to Arit & Geo Calculator</a>
+                    <a href="{{ url_for('arithmetic') }}" class="link">Go to Arit & Geo Calculator</a>
                 </div>
             </div>
 
@@ -39,7 +39,7 @@
                 </div>
                 <div class="function-content" style="display: none;">
                     <p>Calculate angles and sides using the Law of Cosines.</p>
-                    <a href="./LOC/law-of-cosinses.html" class="link">Go to Law of Cosines Calculator</a>
+                    <a href="{{ url_for('law_of_cosines') }}" class="link">Go to Law of Cosines Calculator</a>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
                 </div>
                 <div class="function-content" style="display: none;">
                     <p>Find the percent error between two values for accuracy.</p>
-                    <a href="./PE/percent-error.html" class="link">Go to Percent Error Calculator</a>
+                    <a href="{{ url_for('percent_error') }}" class="link">Go to Percent Error Calculator</a>
                 </div>
             </div>
 
@@ -59,7 +59,7 @@
                 </div>
                 <div class="function-content" style="display: none;">
                     <p>Solve quadratic equations with this calculator.</p>
-                    <a href="./Quad/quadratic.html" class="link">Go to Quadratic Calculator</a>
+                    <a href="{{ url_for('quadratic') }}" class="link">Go to Quadratic Calculator</a>
                 </div>
             </div>
         </section>
